@@ -1,0 +1,12 @@
+.featured-artwork__btn-add{
+    text-transform: uppercase;
+    font-weight: 500;
+    padding: 13px 39px;
+    background-color: #000000;
+    color: #ffffff;
+    border: none;
+    outline: none;
+    font-size: 23px;
+    letter-spacing: 0.07em;
+    line-height: 25px;
+}

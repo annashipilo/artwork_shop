@@ -1,10 +1,13 @@
 import React from 'react';
+import Header from './components/Header/Header';
+import FeaturedArtwork from './components/FeaturedArtwork/FeaturedArtwork.connect';
 import './App.css';
 
-function App() {
+const App = () => {
   return (
-    <div>
-      
+    <div className="app">
+      <Header />
+      <FeaturedArtwork />
     </div>
   );
 }
