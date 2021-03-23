@@ -1,9 +1,11 @@
+@import '../../../variables.scss';
+
 .featured-artwork__btn-add{
     text-transform: uppercase;
     font-weight: 500;
-    padding: 13px 39px;
-    background-color: #000000;
-    color: #ffffff;
+    padding: 13px 40px;
+    background-color: $black;
+    color: $white;
     border: none;
     outline: none;
     font-size: 23px;

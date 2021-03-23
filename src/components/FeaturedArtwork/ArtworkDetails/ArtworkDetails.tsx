@@ -1,6 +1,6 @@
 import React from 'react';
 import { FeaturedArtwork } from '../../../interfaces';
-import './style.css';
+import './style.scss';
 
 interface ArtworkDetailsProps {
     artwork: FeaturedArtwork;

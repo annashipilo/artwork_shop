@@ -1,7 +1,7 @@
 import React from 'react';
 import Logo from './Logo/Logo';
 import Cart from './Cart/Cart';
-import './style.css'
+import './style.scss'
 
 const Header = () => {
   return (

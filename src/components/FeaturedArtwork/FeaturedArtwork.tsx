@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { FeaturedArtwork as FeaturedArtworkInterface } from '../../interfaces';
 import AddToCart from './AddToCart/AddToCart';
 import ArtworkDetails from './ArtworkDetails/ArtworkDetails';
-import './style.css'
+import './style.scss'
 
 interface FeaturedArtworkProps {
     initArtworks(): void;
