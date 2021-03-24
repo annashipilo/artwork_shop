@@ -1,0 +1,13 @@
+.sort{
+    margin-top: 15px;
+
+    & .title--not-active{
+        margin: 0 30px 0 17px;
+    }
+
+    &__select{
+        font-size: 34px;
+        border: none;
+        outline: none;
+    }
+}

@@ -4,7 +4,7 @@ import Products from './Products';
 
 const mapStateToProps = (state: any) => {
     return {
-        artworks: state.app.artworks,
+        artworks: state.app.currentArtworks,
     }
 }
 

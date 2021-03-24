@@ -1,4 +1,4 @@
-import { SET_ARTWORKS, SET_FEATURED_ARTWORK, ADD_TO_CART, CLEAR_CART, SHOW_CART } from './actions';
+import { SET_ALL_ARTWORKS, SET_CURRENT_ARTWORKS, SET_FEATURED_ARTWORK, ADD_TO_CART, CLEAR_CART, SHOW_CART, CHANGE_SORT } from './actions';
 import { Artwork } from '../../interfaces';
 
 // interface State {
@@ -8,16 +8,23 @@ import { Artwork } from '../../interfaces';
 // }
 
 const initialState = {
-  artworks: [],
+  allArtworks: [],
+  currentArtworks: [],
   featuredArtwork: null,
   cart: [] as Artwork[],
   isCartShown: false,
+  sort: {
+    isAscending: true,
+    value: "price"
+  }
 }
 
 export default function counterReducer(state = initialState, action: any) {
   switch (action.type) {
-    case SET_ARTWORKS:
-      return { ...state, artworks: action.payload }
+    case SET_ALL_ARTWORKS:
+      return { ...state, allArtworks: action.payload }
+    case SET_CURRENT_ARTWORKS:
+      return { ...state, currentArtworks: action.payload }
     case SET_FEATURED_ARTWORK:
       return { ...state, featuredArtwork: action.payload }
     case ADD_TO_CART:
@@ -28,6 +35,8 @@ export default function counterReducer(state = initialState, action: any) {
       return { ...state, cart: [] }
     case SHOW_CART:
       return { ...state, isCartShown: action.payload }
+    case CHANGE_SORT:
+      return { ...state, sort: action.payload }
     default:
       return state
   }

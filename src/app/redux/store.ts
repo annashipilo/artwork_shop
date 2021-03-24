@@ -3,7 +3,8 @@ import createSagaMiddleware from 'redux-saga';
 import thunk from 'redux-thunk';
 
 import appReducer from './reducer';
-import fetchArtworksSaga from './sagas';
+import fetchArtworksSaga from './sagas/fetchArtworksSaga';
+import sortArtworksSaga from './sagas/sortArtworksSaga';
 
 const sagaMiddleware = createSagaMiddleware();
 
@@ -25,3 +26,4 @@ export type AppThunk<ReturnType = void> = ThunkAction<
 >;
 
 sagaMiddleware.run(fetchArtworksSaga);
+sagaMiddleware.run(sortArtworksSaga);

@@ -1,5 +1,5 @@
 import React from 'react';
-import Sort from './Sort/Sort';
+import Sort from './Sort/Sort.connect';
 import Filter from './Filter/Filter';
 import Products from './Products/Products.connect';
 import './style.scss';

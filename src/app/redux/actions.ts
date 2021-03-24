@@ -1,11 +1,13 @@
-import { Artwork } from '../../interfaces';
+import { Artwork, Sorting } from '../../interfaces';
 
-export const SET_ARTWORKS = 'SET_ARTWORKS';
+export const SET_ALL_ARTWORKS = 'SET_ALL_ARTWORKS';
+export const SET_CURRENT_ARTWORKS = 'SET_CURRENT_ARTWORKS';
 export const INIT_ARTWORKS = 'INIT_ARTWORKS';
 export const SET_FEATURED_ARTWORK = 'SET_FEATURED_ARTWORK';
 export const ADD_TO_CART = 'ADD_TO_CART';
 export const CLEAR_CART = 'CLEAR_CART';
 export const SHOW_CART = 'SHOW_CART';
+export const CHANGE_SORT = 'CHANGE_SORT';
 
 export function initArtworks() {
   return {
@@ -15,7 +17,14 @@ export function initArtworks() {
 
 export function setArtworks(artworks: Artwork[]) {
   return {
-    type: SET_ARTWORKS,
+    type: SET_ALL_ARTWORKS,
+    payload: artworks,
+  }
+}
+
+export function setCurrentArtworks(artworks: Artwork[]) {
+  return {
+    type: SET_CURRENT_ARTWORKS,
     payload: artworks,
   }
 }
@@ -29,7 +38,7 @@ export function setFeaturedArtwork(artwork: Artwork) {
 
 export function addToCart(id: number){
   return (dispatch: any, getState: any) => {
-    const artworks = getState().app.artworks;
+    const artworks = getState().app.allArtworks;
     const addedItem = artworks.find((item: Artwork) => item.id === id);
     dispatch( {
       type: ADD_TO_CART,
@@ -52,5 +61,12 @@ export function showCart(state: boolean){
   return {
     type: SHOW_CART,
     payload: state
+  }
+}
+
+export function changeSort(payload: Sorting){
+  return {
+    type: CHANGE_SORT,
+    payload,
   }
 }

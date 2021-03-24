@@ -24,3 +24,8 @@ export interface Artwork {
     featured: boolean,
     details: ArtworkDetails | null
 }
+
+export interface Sorting{
+    isAscending: boolean,
+    value: string
+}

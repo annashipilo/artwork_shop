@@ -7,7 +7,6 @@ interface AddToCartProps {
 }
 
 const AddToCart = ({ id, addToCart }: AddToCartProps) => {
-    console.log(id)
     return (
         <button 
             className="add-to-cart-btn" 
