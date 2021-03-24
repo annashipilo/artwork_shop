@@ -1,12 +1,12 @@
 import React, { useEffect } from 'react';
-import { FeaturedArtwork as FeaturedArtworkInterface } from '../../interfaces';
+import { Artwork as ArtworkInterface } from '../../interfaces';
 import AddToCart from './AddToCart/AddToCart';
 import ArtworkDetails from './ArtworkDetails/ArtworkDetails';
 import './style.scss'
 
 interface FeaturedArtworkProps {
     initArtworks(): void;
-    artwork: FeaturedArtworkInterface;
+    artwork: ArtworkInterface;
 }
 
 const FeaturedArtwork = ({ initArtworks, artwork }: FeaturedArtworkProps) => {

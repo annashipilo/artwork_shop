@@ -1,9 +1,9 @@
 import React from 'react';
-import { FeaturedArtwork } from '../../../interfaces';
+import { Artwork } from '../../../interfaces';
 import './style.scss';
 
 interface ArtworkDetailsProps {
-    artwork: FeaturedArtwork;
+    artwork: Artwork;
 }
 
 const ArtworkDetails = ({ artwork }: ArtworkDetailsProps) => {

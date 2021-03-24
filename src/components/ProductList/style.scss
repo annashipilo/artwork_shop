@@ -1,0 +1,18 @@
+.product-list{
+
+    &__header{
+        display: flex;
+        justify-content: space-between;
+        margin: 25px 0 75px;
+
+        &-divider{
+            margin: 0 30px;
+        }
+    }
+
+    &__content{
+        display: grid;
+        grid-template-columns: 25% 75%;
+    }
+
+}

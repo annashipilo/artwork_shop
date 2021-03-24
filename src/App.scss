@@ -5,9 +5,14 @@
 }
 
 .title{
-  font-weight: bold;
+  font-weight: 700;
   font-size: 34px;
   margin: 25px 0;
+
+  &--not-active{
+    font-weight: 400;
+    color: $gray-font;
+  }
 }
 
 .category-title{
