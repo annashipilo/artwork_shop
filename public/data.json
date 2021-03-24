@@ -56,7 +56,7 @@
                 "alt": "nature, Green pine trees"
             },
             "id": 3,
-            "bestseller": false,
+            "bestseller": true,
             "featured": false,
             "details": null
         },
@@ -70,7 +70,7 @@
                 "alt": "landmark, Eiffel Towel"
             },
             "id": 4,
-            "bestseller": false,
+            "bestseller": true,
             "featured": false,
             "details": null
         },
@@ -154,7 +154,7 @@
                 "alt": "landmark, Brooklyn Bridge"
             },
             "id": 10,
-            "bestseller": false,
+            "bestseller": true,
             "featured": false,
             "details": null
         },
@@ -224,7 +224,7 @@
                 "alt": "landmark, Statue of Liberty"
             },
             "id": 15,
-            "bestseller": false,
+            "bestseller": true,
             "featured": false,
             "details": null
         },
@@ -252,7 +252,7 @@
                 "alt": "flowers, Pink Flowers on the Wall"
             },
             "id": 17,
-            "bestseller": false,
+            "bestseller": true,
             "featured": false,
             "details": null
         },
@@ -266,7 +266,7 @@
                 "alt": "flowers, Sunflowers in the Vase"
             },
             "id": 18,
-            "bestseller": false,
+            "bestseller": true,
             "featured": false,
             "details": null
         },
@@ -322,7 +322,7 @@
                 "alt": "nature, Arches National Park"
             },
             "id": 22,
-            "bestseller": false,
+            "bestseller": true,
             "featured": false,
             "details": null
         },
@@ -336,7 +336,7 @@
                 "alt": "food, Cooked Eggs"
             },
             "id": 23,
-            "bestseller": false,
+            "bestseller": true,
             "featured": false,
             "details": null
         },

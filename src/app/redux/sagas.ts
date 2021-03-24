@@ -6,10 +6,11 @@ function* fetchArtworks(): any {
     try {
         //   const artworks = yield call(Api.fetchArtworks, action.payload.userId);
         const response = yield call(fetch, '/data.json');
-        const responseBody = yield response.json();
-        const [featuredArtwork, notFeaturedArtworks] = yield call(filterArtworks, responseBody.products)
+        const artworks = yield response.json();
+        // const [featuredArtwork, notFeaturedArtworks] = yield call(filterArtworks, responseBody.products)
+        const featuredArtwork = artworks.products.find((item: any) => item.featured)
         
-        yield put({ type: SET_ARTWORKS, payload: notFeaturedArtworks });
+        yield put({ type: SET_ARTWORKS, payload: artworks.products });
         yield put({ type: SET_FEATURED_ARTWORK, payload: featuredArtwork });
     } catch (e) {
         console.log('error', e)
@@ -19,17 +20,4 @@ function* fetchArtworks(): any {
 
 export default function* fetchArtworksSaga() {
     yield takeLatest(INIT_ARTWORKS, fetchArtworks);
-}
-
-function filterArtworks(artworks: any[]): [{}, []]{
-    let featuredArtwork: any;
-    const notFeaturedArtworks: any = [];
-    artworks.forEach((item) => {
-        if(item.featured){
-            featuredArtwork = item;
-        } else {
-            notFeaturedArtworks.push(item);
-        }
-    })
-    return [featuredArtwork, notFeaturedArtworks]
 }

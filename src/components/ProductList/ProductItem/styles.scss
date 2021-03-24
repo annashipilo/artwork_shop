@@ -2,14 +2,34 @@
 
 .product-item{
     margin-left: 110px;
+    position: relative;
 
     &__img{
-        height: 500px;
         width: 100%;
+
+        &-wrapper{
+            position: relative;
+            width: 360px;
+        }
     }
 
     &__price{
         font-size: 29px;
         color: $dark-gray;
+    }
+
+    &__bestseller-label{
+        position: absolute;
+        top: 0;
+        left: 0;
+        font-size: 20px;
+        padding: 8px 25px;
+        background-color: $white;
+    }
+
+    &__btn .add-to-cart-btn{ 
+        position: absolute;
+        bottom: 0;
+        width: 100%;
     }
 }

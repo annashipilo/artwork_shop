@@ -1,9 +1,6 @@
-@import '../../../variables.scss';
+@import '../../variables.scss';
 
-.featured-artwork__btn-add{
-    text-transform: uppercase;
-    font-weight: 500;
-    padding: 13px 40px;
+.add-to-cart-btn{
     background-color: $black;
     color: $white;
     border: none;
@@ -11,4 +8,7 @@
     font-size: 23px;
     letter-spacing: 0.07em;
     line-height: 25px;
+    font-weight: 500;
+    text-transform: uppercase;
+    padding: 13px 40px;
 }
