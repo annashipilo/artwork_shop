@@ -1,13 +1,15 @@
 import { Artwork, Sorting } from '../../interfaces';
 
-export const SET_ALL_ARTWORKS = 'SET_ALL_ARTWORKS';
-export const SET_CURRENT_ARTWORKS = 'SET_CURRENT_ARTWORKS';
-export const INIT_ARTWORKS = 'INIT_ARTWORKS';
-export const SET_FEATURED_ARTWORK = 'SET_FEATURED_ARTWORK';
-export const ADD_TO_CART = 'ADD_TO_CART';
-export const CLEAR_CART = 'CLEAR_CART';
-export const SHOW_CART = 'SHOW_CART';
-export const CHANGE_SORT = 'CHANGE_SORT';
+export const SET_ALL_ARTWORKS = 'artworks/setAll';
+export const SET_CURRENT_ARTWORKS = 'artworks/setCurrent';
+export const INIT_ARTWORKS = 'artworks/init';
+export const SET_FEATURED_ARTWORK = 'artworks/setFeatured';
+export const ADD_TO_CART = 'cart/addToCart';
+export const CLEAR_CART = 'cart/clear';
+export const SHOW_CART = 'cart/show';
+export const CHANGE_SORT = 'sort/changeSort';
+export const DEFINE_CATEGORIES = 'filter/defineCategories';
+export const APPLY_FILTER = 'filter/apply';
 
 export function initArtworks() {
   return {
@@ -70,3 +72,10 @@ export function changeSort(payload: Sorting){
     payload,
   }
 }
+
+export function applyFilter(payload: any){
+  return {
+    type: APPLY_FILTER,
+    payload
+  }
+} 

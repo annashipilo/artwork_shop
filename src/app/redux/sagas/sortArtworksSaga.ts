@@ -25,13 +25,13 @@ const sortByAlphabet = (allArtworks: Artwork[], isAscending: boolean) => {
 
 function* SortArtworks(action: any): any {
     try {
-        const {value, isAscending} = action.payload;
+        const { value, isAscending } = action.payload;
         const state = yield select(getState);
         let artworks;
-        if(value === 'price'){
-            artworks = sortByPrice(state.allArtworks, isAscending);
+        if (value === 'price') {
+            artworks = sortByPrice(state.currentArtworks, isAscending);
         } else {
-            artworks = sortByAlphabet(state.allArtworks, isAscending);
+            artworks = sortByAlphabet(state.currentArtworks, isAscending);
         }
 
         console.log(artworks);

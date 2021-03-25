@@ -5,6 +5,7 @@ import thunk from 'redux-thunk';
 import appReducer from './reducer';
 import fetchArtworksSaga from './sagas/fetchArtworksSaga';
 import sortArtworksSaga from './sagas/sortArtworksSaga';
+import filterArtworksSaga from './sagas/filterArtworksSaga';
 
 const sagaMiddleware = createSagaMiddleware();
 
@@ -27,3 +28,4 @@ export type AppThunk<ReturnType = void> = ThunkAction<
 
 sagaMiddleware.run(fetchArtworksSaga);
 sagaMiddleware.run(sortArtworksSaga);
+sagaMiddleware.run(filterArtworksSaga);

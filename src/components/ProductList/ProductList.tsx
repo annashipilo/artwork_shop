@@ -1,6 +1,6 @@
 import React from 'react';
 import Sort from './Sort/Sort.connect';
-import Filter from './Filter/Filter';
+import Filter from './Filter/Filter.connect';
 import Products from './Products/Products.connect';
 import './style.scss';
 

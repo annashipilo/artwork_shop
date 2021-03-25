@@ -1,4 +1,14 @@
-import { SET_ALL_ARTWORKS, SET_CURRENT_ARTWORKS, SET_FEATURED_ARTWORK, ADD_TO_CART, CLEAR_CART, SHOW_CART, CHANGE_SORT } from './actions';
+import {
+  SET_ALL_ARTWORKS,
+  SET_CURRENT_ARTWORKS,
+  SET_FEATURED_ARTWORK,
+  ADD_TO_CART,
+  CLEAR_CART,
+  SHOW_CART,
+  CHANGE_SORT,
+  DEFINE_CATEGORIES,
+  APPLY_FILTER,
+} from './actions';
 import { Artwork } from '../../interfaces';
 
 // interface State {
@@ -16,6 +26,11 @@ const initialState = {
   sort: {
     isAscending: true,
     value: "price"
+  },
+  categories: [],
+  appliedFilters: {
+    category: [],
+    price: []
   }
 }
 
@@ -37,6 +52,11 @@ export default function counterReducer(state = initialState, action: any) {
       return { ...state, isCartShown: action.payload }
     case CHANGE_SORT:
       return { ...state, sort: action.payload }
+    case DEFINE_CATEGORIES:
+      return { ...state, categories: action.payload }
+    case APPLY_FILTER:
+      const filters = { ...state.appliedFilters, ...action.payload };
+      return { ...state, appliedFilters: filters }
     default:
       return state
   }

@@ -10,9 +10,12 @@ interface ProductsProps {
 const Products = ({ artworks }: ProductsProps) => {
     return (
         <div className="products">
-            {artworks?.length && artworks.map((item) => {
-                return <ProductItem artwork={item} key={item.id} />
-            })}
+            {artworks?.length ? 
+                artworks.map((item) => {
+                    return <ProductItem artwork={item} key={item.id} />
+                }) : 
+                <h3 className="title">There are no products</h3>
+            }
         </div>
     )
 }
