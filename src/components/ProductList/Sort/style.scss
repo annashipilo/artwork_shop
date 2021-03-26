@@ -1,6 +1,10 @@
 .sort{
     margin-top: 22px;
 
+    @media screen and (max-width: 600px) {
+        display: none;
+    }
+
     & .title--not-active{
         margin: 0 30px 0 17px;
     }

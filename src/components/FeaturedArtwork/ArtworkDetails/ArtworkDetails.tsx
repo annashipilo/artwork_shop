@@ -29,7 +29,7 @@ const ArtworkDetails = ({ artwork }: ArtworkDetailsProps) => {
                     </div>
                     <div className="featured-artwork__aside-details">
                         <h3 className="title">Details</h3>
-                        <p className="featured-artwork__text">Size: {details.dimmentions.heigth} x {details.dimmentions.width} pixel</p>
+                        <p className="featured-artwork__text">Size: {details.dimensions.height} x {details.dimensions.width} pixel</p>
                         <p className="featured-artwork__text">Size: {details.size}</p>
                     </div>
                 </div>

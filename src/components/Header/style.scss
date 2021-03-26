@@ -5,4 +5,9 @@
     margin: 55px 0 0 10px;
     padding-bottom: 45px;
     border-bottom: 4px solid #e4e4e4;
+
+    @media screen and (max-width: 600px) {
+        margin-left: 0;
+        padding: 0 30px 45px;
+    }
 }

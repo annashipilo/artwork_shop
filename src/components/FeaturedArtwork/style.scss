@@ -1,18 +1,35 @@
 @import '../../variables.scss';
 
 .featured-artwork{
+    border-bottom: 4px solid $light-gray;
+
+    @media screen and (max-width: 600px) {
+        padding: 0 15px;
+    }
+
     &__header{
         display: flex;
         justify-content: space-between;
         padding-left: 10px;
         margin-top: 60px;
         margin-bottom: 30px;
+
+        @media screen and (max-width: 600px) {
+            flex-direction: column;
+            padding: 0;
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
     }
 
     &__title{
         font-weight: bold;
         font-size: 32px;
         line-height: 35px;
+
+        @media screen and (max-width: 600px) {
+            margin-bottom: 70px;
+        }
     }
 
     &__img{
@@ -24,6 +41,19 @@
             justify-content: center;
             position: relative;
             margin-bottom: 60px;
+
+            @media screen and (max-width: 600px) {
+                display: none;
+            }
+
+            &--mobile{
+                display: none;
+
+                @media screen and (max-width: 600px) {
+                    display: flex;
+                    margin-bottom: 20px;
+                }
+            }
         }
 
     
@@ -36,6 +66,14 @@
             font-size: 20px;
             background-color: $white;
             padding: 30px 55px;
+        }
+    }
+
+    &__add-to-cart{
+        width: 250px;
+
+        @media screen and (max-width: 600px) {
+            width: 100%;
         }
     }
 }

@@ -4,9 +4,9 @@ export interface ArtworkImage {
 }
 
 export interface ArtworkDetails {
-    dimmentions: {
+    dimensions: {
         width: number;
-        heigth: number;
+        height: number;
     }
     size: number;
     description: string;

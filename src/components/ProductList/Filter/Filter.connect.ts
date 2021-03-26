@@ -5,6 +5,7 @@ import { applyFilter } from '../../../app/redux/actions';
 const mapStateToProps = (state: any) => {
     return {
         categories: state.app.categories,
+        isFilterShown: state.app.isFilterShown,
     }
 }
 

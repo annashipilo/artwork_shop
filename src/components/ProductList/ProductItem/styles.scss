@@ -4,6 +4,10 @@
     margin-left: 110px;
     position: relative;
 
+    @media screen and (max-width: 600px) {
+        margin-left: 0;
+    }
+
     &__img{
         width: 100%;
 
@@ -31,5 +35,16 @@
         position: absolute;
         bottom: 0;
         width: 100%;
+    }
+
+    &__btn--hidden{
+        display: none;
+
+        @media screen and (max-width: 600px) {
+            display: flex;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+        }
     }
 }

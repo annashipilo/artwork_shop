@@ -8,6 +8,8 @@ import {
   CHANGE_SORT,
   DEFINE_CATEGORIES,
   APPLY_FILTER,
+  SHOW_FILTER,
+  CLEAR_FILTER,
 } from './actions';
 import { Artwork } from '../../interfaces';
 
@@ -31,7 +33,8 @@ const initialState = {
   appliedFilters: {
     category: [],
     price: []
-  }
+  },
+  isFilterShown: false,
 }
 
 export default function counterReducer(state = initialState, action: any) {
@@ -55,8 +58,12 @@ export default function counterReducer(state = initialState, action: any) {
     case DEFINE_CATEGORIES:
       return { ...state, categories: action.payload }
     case APPLY_FILTER:
-      const filters = { ...state.appliedFilters, ...action.payload };
+      const filters = { ...state.appliedFilters, ...action.payload }
       return { ...state, appliedFilters: filters }
+    case CLEAR_FILTER:
+      return { ...state, appliedFilters: initialState.appliedFilters }
+    case SHOW_FILTER:
+      return { ...state, isFilterShown: action.payload }
     default:
       return state
   }

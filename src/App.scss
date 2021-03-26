@@ -2,6 +2,10 @@
 
 .app{
   padding: 0 80px;
+
+  @media screen and (max-width: 600px) {
+    padding: 0;
+  }
 }
 
 .title{

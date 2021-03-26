@@ -1,0 +1,14 @@
+.filter--mobile{
+    display: none;
+
+    @media screen and (max-width: 600px) {
+        display: block;
+        width: 29px;
+        height: 29px;
+        margin-top: 20px;
+        border: none;
+        outline: none;
+        background-color: transparent;
+        background-image: url('../../../icons/filter.icon-mobile.svg');
+    }
+}

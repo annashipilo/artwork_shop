@@ -4,19 +4,21 @@ import FormGroup from '@material-ui/core/FormGroup';
 import FormControl from '@material-ui/core/FormControl';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import PriceFilter from '../PriceFilter/PriceFilter';
+import './style.scss';
 
 interface FilterProps {
     categories: string[];
     applyFilter(filter: any): void;
+    isFilterShown: boolean;
 }
 
-const Filter = ({ categories, applyFilter }: FilterProps) => {
+const Filter = ({ categories, applyFilter, isFilterShown }: FilterProps) => {
     const [options, setOptions] = useState<string[]>([]);
 
     const handleChange = (e: any) => {
         const option = e.target;
         const updatedOptions = [...options] as string[]
-        if(option.checked){
+        if (option.checked) {
             updatedOptions.push(option.name)
         } else {
             const index = updatedOptions.indexOf(option.name);
@@ -25,27 +27,29 @@ const Filter = ({ categories, applyFilter }: FilterProps) => {
         setOptions(updatedOptions);
     }
     useEffect(() => {
-        applyFilter({category: options})
+        applyFilter({ category: options })
     }, [options])
 
     return (
-        <FormControl component="fieldset">
-            <h3 className="title">Category</h3>
-            <FormGroup>
-                {categories.map((item, i) => {
-                    return (
-                        <FormControlLabel
-                            control={<Checkbox onChange={handleChange} name={item} color="default" value={item} />}
-                            label={item}
-                            key={i}
-                        />
-                    )
-                })
-                }
-            </FormGroup>
-            <h3 className="title">Price range</h3>
-            <PriceFilter applyFilter={applyFilter} />
-        </FormControl>
+        <div className={isFilterShown ? "filters" : "filters--hidden"}>
+            <FormControl component="fieldset">
+                <h3 className="title">Category</h3>
+                <FormGroup>
+                    {categories.map((item, i) => {
+                        return (
+                            <FormControlLabel
+                                control={<Checkbox onChange={handleChange} name={item} color="default" value={item} />}
+                                label={item}
+                                key={i}
+                            />
+                        )
+                    })
+                    }
+                </FormGroup>
+                <h3 className="title">Price range</h3>
+                <PriceFilter applyFilter={applyFilter} />
+            </FormControl>
+        </div>
     )
 }
 

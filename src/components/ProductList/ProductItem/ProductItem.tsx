@@ -17,11 +17,11 @@ const ProductItem = ({ artwork }: ProductItemProps) => {
                 onMouseEnter={() => showBtn(true)}
                 onMouseLeave={() => showBtn(false)}>
                 <img className="product-item__img" src={artwork.image.src} alt={artwork.image.alt}/>
-                {isBtnShown &&
-                    <div className="product-item__btn">
+                {/* {isBtnShown && */}
+                    <div className={isBtnShown ? "product-item__btn" : "product-item__btn--hidden"}>
                         <AddToCart id={artwork.id} />
                     </div>
-                }
+                {/* } */}
             </div>
 
             <p className="category-title">{artwork.category}</p>

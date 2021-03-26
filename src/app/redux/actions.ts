@@ -10,6 +10,8 @@ export const SHOW_CART = 'cart/show';
 export const CHANGE_SORT = 'sort/changeSort';
 export const DEFINE_CATEGORIES = 'filter/defineCategories';
 export const APPLY_FILTER = 'filter/apply';
+export const SHOW_FILTER = 'filter/show';
+export const CLEAR_FILTER = 'filter/clear';
 
 export function initArtworks() {
   return {
@@ -79,3 +81,16 @@ export function applyFilter(payload: any){
     payload
   }
 } 
+
+export function showFilter(state: boolean){
+  return {
+    type: SHOW_FILTER,
+    payload: state
+  }
+}
+
+export function clearFilter(){
+  return {
+    type: CLEAR_FILTER
+  }
+}
