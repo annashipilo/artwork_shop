@@ -15,13 +15,13 @@
             "details": null
         },
         {
-            "name": "Chess",
+            "name": "Laptop on the bed",
             "category": "lifestyle",
             "price": 93.89,
             "currency": "USD",
             "image": {
-                "src": "https://images.pexels.com/photos/6140933/pexels-photo-6140933.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
-                "alt": "lifestyle, Chess"
+                "src": "https://images.pexels.com/photos/916337/pexels-photo-916337.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+                "alt": "lifestyle, Laptop on the bed"
             },
             "id": 1,
             "bestseller": false,
@@ -61,13 +61,13 @@
             "details": null
         },
         {
-            "name": "Eiffel Towel",
+            "name": "Burj-Khalifa",
             "category": "landmark",
             "price": 125,
             "currency": "USD",
             "image": {
-                "src": "https://images.pexels.com/photos/2082103/pexels-photo-2082103.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
-                "alt": "landmark, Eiffel Towel"
+                "src": "https://images.pexels.com/photos/1534411/pexels-photo-1534411.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+                "alt": "landmark, Burj-Khalifa"
             },
             "id": 4,
             "bestseller": true,
@@ -117,13 +117,13 @@
             "details": null
         },
         {
-            "name": "Assorted Sliced Fruits",
+            "name": "Slices Pizza",
             "category": "food",
             "price": 12,
             "currency": "USD",
             "image": {
-                "src": "https://images.pexels.com/photos/1128678/pexels-photo-1128678.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
-                "alt": "food, Assorted Sliced Fruits"
+                "src": "https://images.pexels.com/photos/315755/pexels-photo-315755.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+                "alt": "food, Sliced Pizza"
             },
             "id": 8,
             "bestseller": false,
@@ -201,13 +201,13 @@
             "details": null
         },
         {
-            "name": "French Macarons in Bowl",
+            "name": "Pancakes with honey",
             "category": "food",
             "price": 110,
             "currency": "USD",
             "image": {
-                "src": "https://images.pexels.com/photos/239581/pexels-photo-239581.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
-                "alt": "food, French Macarons in Bowl"
+                "src": "https://images.pexels.com/photos/357573/pexels-photo-357573.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+                "alt": "food, Pancakes with honey"
             },
             "id": 14,
             "bestseller": false,
@@ -215,13 +215,13 @@
             "details": null
         },
         {
-            "name": "Statue of Liberty",
+            "name": "Eiffel Tower at night",
             "category": "landmark",
             "price": 215,
             "currency": "USD",
             "image": {
-                "src": "https://images.pexels.com/photos/290386/pexels-photo-290386.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
-                "alt": "landmark, Statue of Liberty"
+                "src": "https://images.pexels.com/photos/3879071/pexels-photo-3879071.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+                "alt": "landmark, Eiffel Tower at night"
             },
             "id": 15,
             "bestseller": true,

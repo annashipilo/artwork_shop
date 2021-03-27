@@ -9,7 +9,7 @@ function* FilterArtworks(): any {
         const appliedFilters = state.appliedFilters;
         const { category, price } = appliedFilters;
         const artworks = state.allArtworks;
-        let currentArtworks = [...artworks];
+        let currentArtworks = [...artworks.filter((art: any) => !art.featured)];
         if (!category.length && !Object.keys(price).length) {
             yield put({ type: SET_CURRENT_ARTWORKS, payload: artworks });
         }
@@ -25,6 +25,7 @@ function* FilterArtworks(): any {
                 if (item.price < price.max && item.price > price.min) {
                     return item;
                 }
+                return false;
             })
             yield put({ type: SET_CURRENT_ARTWORKS, payload: updatedArr });
         }
