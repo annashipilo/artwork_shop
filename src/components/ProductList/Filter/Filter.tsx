@@ -10,10 +10,11 @@ interface FilterProps {
     categories: string[];
     applyFilter(filter: any): void;
     isFilterShown: boolean;
+    appliedFilters: any
 }
 
-const Filter = ({ categories, applyFilter, isFilterShown }: FilterProps) => {
-    const [options, setOptions] = useState<string[]>([]);
+const Filter = ({ categories, applyFilter, isFilterShown, appliedFilters }: FilterProps) => {
+    const [options, setOptions] = useState<string[]>([...appliedFilters.category]);
 
     const handleChange = (e: any) => {
         const option = e.target;
@@ -27,9 +28,12 @@ const Filter = ({ categories, applyFilter, isFilterShown }: FilterProps) => {
         setOptions(updatedOptions);
     }
     useEffect(() => {
+        // if(!options.length && appliedFilters.category.length){
+        //     return;
+        // }
         applyFilter({ category: options })
     }, [options])
-
+    console.log(appliedFilters.category);
     return (
         <div className={isFilterShown ? "filters" : "filters--hidden"}>
             <FormControl component="fieldset">
@@ -38,7 +42,7 @@ const Filter = ({ categories, applyFilter, isFilterShown }: FilterProps) => {
                     {categories.map((item, i) => {
                         return (
                             <FormControlLabel
-                                control={<Checkbox onChange={handleChange} name={item} color="default" value={item} />}
+                                control={<Checkbox onChange={handleChange} checked={appliedFilters.category.includes(item)} name={item} color="default" value={item} />}
                                 label={item}
                                 key={i}
                             />
@@ -47,7 +51,7 @@ const Filter = ({ categories, applyFilter, isFilterShown }: FilterProps) => {
                     }
                 </FormGroup>
                 <h3 className="title">Price range</h3>
-                <PriceFilter applyFilter={applyFilter} />
+                <PriceFilter applyFilter={applyFilter} priceFilter={appliedFilters.price} />
             </FormControl>
         </div>
     )

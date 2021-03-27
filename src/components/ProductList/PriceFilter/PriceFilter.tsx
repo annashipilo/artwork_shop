@@ -7,6 +7,7 @@ import CheckBoxOutlineBlankIcon from '@material-ui/icons/CheckBoxOutlineBlank';
 
 interface PriceFilterProps {
     applyFilter(filter: any): void;
+    priceFilter: any;
 }
 
 const priceOptions = [{
@@ -35,12 +36,24 @@ const priceOptions = [{
     },
 }]
 
-const PriceFilter = ({ applyFilter }: PriceFilterProps) => {
+const PriceFilter = ({ applyFilter, priceFilter }: PriceFilterProps) => {
     const handleChange = (e: any) => {
         const value = e.target.value;
         const option = priceOptions.find(price => price.name === value)
         applyFilter({ price: option?.value })
     }
+
+    const findOption = (value: any, name: string): boolean => {
+        const option = priceOptions.find(option => {
+            return option.name == name
+        })
+        if(option && option.value == value){
+            return true;
+        }
+        return false;
+    }
+
+    console.log(priceFilter)
 
     return (
         <RadioGroup onChange={handleChange}>
@@ -48,7 +61,7 @@ const PriceFilter = ({ applyFilter }: PriceFilterProps) => {
                 priceOptions.map((item, i) => {
                     return <FormControlLabel
                         value={item.name}
-                        control={<Radio color="default" checkedIcon={<CheckBoxIcon />} icon={<CheckBoxOutlineBlankIcon />} />}
+                        control={<Radio color="default" checked={findOption(priceFilter, item.name)} checkedIcon={<CheckBoxIcon />} icon={<CheckBoxOutlineBlankIcon />} />}
                         label={item.name}
                         key={i} />
                 })

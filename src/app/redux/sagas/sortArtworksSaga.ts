@@ -34,7 +34,7 @@ function* SortArtworks(action: any): any {
             artworks = sortByAlphabet(state.currentArtworks, isAscending);
         }
 
-        console.log(artworks);
+        // console.log(artworks);
         yield put({ type: SET_CURRENT_ARTWORKS, payload: artworks });
     } catch (e) {
         console.log('error', e)

@@ -40,57 +40,70 @@ export function setFeaturedArtwork(artwork: Artwork) {
   }
 }
 
-export function addToCart(id: number){
+export function addToCart(id: number) {
   return (dispatch: any, getState: any) => {
     const artworks = getState().app.allArtworks;
     const addedItem = artworks.find((item: Artwork) => item.id === id);
-    dispatch( {
+    dispatch({
       type: ADD_TO_CART,
       payload: addedItem
     })
-    dispatch( {
+    dispatch({
       type: SHOW_CART,
       payload: true
     })
   }
 }
 
-export function clearCart(){
+export function clearCart() {
   return {
     type: CLEAR_CART
   }
 }
 
-export function showCart(state: boolean){
+export function showCart(state: boolean) {
   return {
     type: SHOW_CART,
     payload: state
   }
 }
 
-export function changeSort(payload: Sorting){
+export function changeSort(payload: Sorting) {
   return {
     type: CHANGE_SORT,
     payload,
   }
 }
 
-export function applyFilter(payload: any){
+export function applyFilter(payload: any) {
   return {
     type: APPLY_FILTER,
     payload
   }
-} 
+}
 
-export function showFilter(state: boolean){
+export function showFilter(state: boolean) {
   return {
     type: SHOW_FILTER,
     payload: state
   }
 }
 
-export function clearFilter(){
-  return {
-    type: CLEAR_FILTER
+export function clearFilter() {
+  return (dispatch: any) => {
+    dispatch({
+      type: APPLY_FILTER,
+      payload: {
+        category: [],
+        price: []
+      }
+    })
+    dispatch ({
+      type: CLEAR_FILTER
+    })
+    dispatch ({
+      type: SHOW_FILTER,
+      payload: false
+    })
   }
 }

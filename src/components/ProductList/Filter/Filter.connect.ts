@@ -6,6 +6,7 @@ const mapStateToProps = (state: any) => {
     return {
         categories: state.app.categories,
         isFilterShown: state.app.isFilterShown,
+        appliedFilters: state.app.appliedFilters,
     }
 }
 

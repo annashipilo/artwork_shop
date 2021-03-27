@@ -6,12 +6,17 @@ import ToggleFilter from './ToggleFilter/ToggleFilter.connect';
 import MobileFilterWrapper from './MobileFilterWrapper/MobileFilterWrapper.connect'
 import './style.scss';
 
-const ProductList = () => {
+interface ProductListProps {
+  isFilterShown: boolean;
+}
+
+const ProductList = ({ isFilterShown }: ProductListProps) => {
   return (
     <div className="product-list">
+      {isFilterShown && <div className="product-list__shadow"></div>}
       <div className="product-list__header">
-        <h3 className="title">Photography 
-          <span className="product-list__header-divider">/</span> 
+        <h3 className="title">Photography
+          <span className="product-list__header-divider">/</span>
           <span className="title--not-active">Premium Photos</span>
         </h3>
         <Sort />
@@ -19,7 +24,7 @@ const ProductList = () => {
       </div>
       <div className="product-list__content">
         <Filter />
-        <MobileFilterWrapper />
+        {isFilterShown && <MobileFilterWrapper />}
         <Products />
       </div>
     </div>

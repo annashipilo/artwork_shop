@@ -26,7 +26,7 @@ function* FilterArtworks(action: any): any {
                     return item;
                 }
             })
-            console.log(updatedArr);
+            // console.log(updatedArr);
             yield put({ type: SET_CURRENT_ARTWORKS, payload: updatedArr });
         }
     } catch (e) {

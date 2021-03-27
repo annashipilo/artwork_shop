@@ -61,6 +61,7 @@ export default function counterReducer(state = initialState, action: any) {
       const filters = { ...state.appliedFilters, ...action.payload }
       return { ...state, appliedFilters: filters }
     case CLEAR_FILTER:
+      // console.log(initialState.appliedFilters);
       return { ...state, appliedFilters: initialState.appliedFilters }
     case SHOW_FILTER:
       return { ...state, isFilterShown: action.payload }

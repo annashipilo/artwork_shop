@@ -12,8 +12,8 @@ const Products = ({ artworks }: ProductsProps) => {
     const [currentArtworks, setCurrentArtworks] = useState<ArtworkInterface[]>(artworks)
     const [page, setPage] = useState<number>(1);
 
-    console.log('currentArtworks', currentArtworks);
-    console.log('artworks', artworks);
+    // console.log('currentArtworks', currentArtworks);
+    // console.log('artworks', artworks);
     const pageSize = 4;
 
     const handleChange = (pageIndex = 1) => {
@@ -22,21 +22,21 @@ const Products = ({ artworks }: ProductsProps) => {
         setCurrentArtworks(a);
     }
 
-    useEffect(() =>{
+    useEffect(() => {
         handleChange(1);
     }, [artworks])
 
     return (
         <div>
             <div className="products">
-                {currentArtworks?.length ? 
+                {currentArtworks?.length ?
                     currentArtworks.map((item) => {
                         return <ProductItem artwork={item} key={item.id} />
-                    }) : 
+                    }) :
                     <h3 className="title">There are no products</h3>
                 }
             </div>
-            <Pagination onChange={handleChange} pageIndex={page} count={Math.ceil(artworks.length / pageSize)}/>
+            <Pagination onChange={handleChange} pageIndex={page} count={Math.ceil(artworks.length / pageSize)} />
         </div>
     )
 }

@@ -1,16 +1,10 @@
 import { connect } from 'react-redux';
 import MobileFilterWrapper from './MobileFilterWrapper';
-import { clearFilter, applyFilter } from '../../../app/redux/actions';
-
-const mapStateToProps = (state: any) => {
-    return {
-        isFilterShown: state.app.isFilterShown,
-    }
-}
+import { clearFilter, showFilter } from '../../../app/redux/actions';
 
 const mapDispatchToProps = {
     clearFilter,
-    applyFilter
+    showFilter,
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(MobileFilterWrapper);
+export default connect(null, mapDispatchToProps)(MobileFilterWrapper);

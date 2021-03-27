@@ -34,7 +34,7 @@ const CartContent = ({ cart, clearCart, showCart }: CartContentProps) => {
                 }
             </div>
             <div className="cart-content__footer">
-                <button className="cart-content__clear-btn" onClick={clearCartContent}>Clear</button>
+                <button className="btn cart-content__clear-btn" onClick={clearCartContent}>Clear</button>
             </div>
         </div>)
 }

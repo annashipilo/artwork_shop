@@ -4,13 +4,17 @@ import './style.scss';
 
 interface MobileFilterWrapperProps {
     clearFilter(): void;
-    applyFilter(state: any): void;
-    isFilterShown: boolean;
+    showFilter(state: boolean): void;
 }
 
-const MobileFilterWrapper = ({ clearFilter, applyFilter, isFilterShown }: MobileFilterWrapperProps) => {
+const MobileFilterWrapper = ({ clearFilter, showFilter }: MobileFilterWrapperProps) => {
     return <div className="filter-wrapper">
-        {isFilterShown && <Filter />}
+        <button className="filter-wrapper__btn-close" onClick={() => showFilter(false)}></button>
+        <Filter />
+        <div className="filter-wrapper__btns">
+            <button onClick={clearFilter} className="btn btn--default">Clear</button>
+            <button onClick={() => showFilter(false)} className="btn btn--primary">Save</button>
+        </div>
     </div>
 }
 

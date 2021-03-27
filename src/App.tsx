@@ -1,7 +1,7 @@
 import React from 'react';
 import Header from './components/Header/Header';
 import FeaturedArtwork from './components/FeaturedArtwork/FeaturedArtwork.connect';
-import ProductList from './components/ProductList/ProductList';
+import ProductList from './components/ProductList/ProductList.connect';
 import './App.scss';
 
 const App = () => {
