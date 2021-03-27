@@ -28,12 +28,9 @@ const Filter = ({ categories, applyFilter, isFilterShown, appliedFilters }: Filt
         setOptions(updatedOptions);
     }
     useEffect(() => {
-        // if(!options.length && appliedFilters.category.length){
-        //     return;
-        // }
         applyFilter({ category: options })
     }, [options])
-    console.log(appliedFilters.category);
+
     return (
         <div className={isFilterShown ? "filters" : "filters--hidden"}>
             <FormControl component="fieldset">

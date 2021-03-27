@@ -12,16 +12,14 @@ const ProductItem = ({ artwork }: ProductItemProps) => {
 
     return (
         <div className="product-item">
-            <div 
-                className="product-item__img-wrapper" 
+            <div
+                className="product-item__img-wrapper"
                 onMouseEnter={() => showBtn(true)}
                 onMouseLeave={() => showBtn(false)}>
-                <img className="product-item__img" src={artwork.image.src} alt={artwork.image.alt}/>
-                {/* {isBtnShown && */}
-                    <div className={isBtnShown ? "product-item__btn" : "product-item__btn--hidden"}>
-                        <AddToCart id={artwork.id} />
-                    </div>
-                {/* } */}
+                <img className="product-item__img" src={artwork.image.src} alt={artwork.image.alt} />
+                <div className={isBtnShown ? "product-item__btn" : "product-item__btn--hidden"}>
+                    <AddToCart id={artwork.id} />
+                </div>
             </div>
 
             <p className="category-title">{artwork.category}</p>

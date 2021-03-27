@@ -45,15 +45,13 @@ const PriceFilter = ({ applyFilter, priceFilter }: PriceFilterProps) => {
 
     const findOption = (value: any, name: string): boolean => {
         const option = priceOptions.find(option => {
-            return option.name == name
+            return option.name === name
         })
         if(option && option.value == value){
             return true;
         }
         return false;
     }
-
-    console.log(priceFilter)
 
     return (
         <RadioGroup onChange={handleChange}>

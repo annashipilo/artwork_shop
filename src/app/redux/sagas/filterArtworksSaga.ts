@@ -3,7 +3,7 @@ import { SET_CURRENT_ARTWORKS, APPLY_FILTER } from '../actions';
 
 export const getState = (state: any) => state.app;
 
-function* FilterArtworks(action: any): any {
+function* FilterArtworks(): any {
     try {
         const state = yield select(getState);
         const appliedFilters = state.appliedFilters;
@@ -26,7 +26,6 @@ function* FilterArtworks(action: any): any {
                     return item;
                 }
             })
-            // console.log(updatedArr);
             yield put({ type: SET_CURRENT_ARTWORKS, payload: updatedArr });
         }
     } catch (e) {
