@@ -15,4 +15,13 @@
         outline: none;
         background-color: transparent;
     }
+
+    &__btn{
+        background-image: url('../../../icons/sort-icon.svg');
+        height: 22px;
+        width: 22px;
+        background-color: transparent;
+        outline: none;
+        border: none;
+    }
 }

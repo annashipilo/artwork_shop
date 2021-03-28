@@ -29,10 +29,19 @@
 }
 
 .btn{
-    letter-spacing: 0.07em;
-    font-size: 23px;
-    text-transform: uppercase;
-    font-weight: 500;
-    width: 100%;
-    outline: none;
+  letter-spacing: 0.07em;
+  font-size: 23px;
+  text-transform: uppercase;
+  font-weight: 500;
+  width: 100%;
+  outline: none;
+}
+
+.cross-btn{
+  background-image: url('./icons/cross-icon.svg');
+  width: 22px;
+  height: 22px;
+  border: none;
+  outline: none;
+  background-color: transparent;
 }

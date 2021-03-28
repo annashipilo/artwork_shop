@@ -9,7 +9,7 @@ interface MobileFilterWrapperProps {
 
 const MobileFilterWrapper = ({ clearFilter, showFilter }: MobileFilterWrapperProps) => {
     return <div className="filter-wrapper">
-        <button className="filter-wrapper__btn-close" onClick={() => showFilter(false)}></button>
+        <button className="filter-wrapper__btn-close cross-btn" onClick={() => showFilter(false)}></button>
         <Filter />
         <div className="filter-wrapper__btns">
             <button onClick={clearFilter} className="btn btn--default">Clear</button>

@@ -13,9 +13,9 @@
     }
 
     &__close-btn{
-        display: flex;
-        justify-content: flex-end;
-        margin: 20px;
+        position: absolute;
+        right: 10px;
+        top: 10px;
     }
 
     &__item{
@@ -53,6 +53,7 @@
     }
 
     &__list{
+        margin-top: 35px;
         padding: 5px 22px;
         max-height: 300px;
         overflow: scroll;

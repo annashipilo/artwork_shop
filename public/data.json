@@ -117,9 +117,9 @@
             "details": null
         },
         {
-            "name": "Slices Pizza",
+            "name": "Sliced Pizza",
             "category": "food",
-            "price": 12,
+            "price": 10,
             "currency": "USD",
             "image": {
                 "src": "https://images.pexels.com/photos/315755/pexels-photo-315755.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",

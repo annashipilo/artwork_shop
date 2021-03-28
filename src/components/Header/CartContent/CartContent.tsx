@@ -15,9 +15,7 @@ const CartContent = ({ cart, clearCart, showCart }: CartContentProps) => {
     }
     return (
         <div className="cart-content">
-            <div className="cart-content__close-btn">
-                <img src="/assets/cross-icon.jpg" alt="cross-icon" onClick={() => showCart(false)} />
-            </div>
+            <button className="cross-btn cart-content__close-btn" onClick={() => showCart(false)}></button>
             <div className="cart-content__list">
                 {
                     cart.map(item => {

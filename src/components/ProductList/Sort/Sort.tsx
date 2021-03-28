@@ -23,7 +23,7 @@ const Sort = ({ sort, changeSort }: SortProps) => {
 
     return (
         <div className="sort">
-            <span onClick={changeSortOrder}><img src="/assets/sort-icon.jpg" alt="sort-icon" /></span>
+            <button onClick={changeSortOrder} className="sort__btn"></button>
             <span className="title--not-active">Sort By</span>
             <select className="sort__select" defaultValue={option} onChange={handleSelectChange}>
                 <option>Price</option>

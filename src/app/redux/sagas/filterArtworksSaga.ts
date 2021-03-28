@@ -1,7 +1,7 @@
 import { put, takeLatest, select } from 'redux-saga/effects';
 import { SET_CURRENT_ARTWORKS, APPLY_FILTER } from '../actions';
 
-export const getState = (state: any) => state.app;
+const getState = (state: any) => state.app;
 
 function* FilterArtworks(): any {
     try {
