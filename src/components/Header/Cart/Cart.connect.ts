@@ -1,8 +1,9 @@
 import { connect } from 'react-redux';
+import { RootState } from '../../../redux/store'; 
 import Cart from './Cart';
-import { clearCart, showCart } from '../../../app/redux/actions';
+import { clearCart, showCart } from '../../../redux/actions';
 
-const mapStateToProps = (state: any) => {
+const mapStateToProps = (state: RootState) => {
     return {
       cart: state.app.cart,
       isCartShown: state.app.isCartShown,

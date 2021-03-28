@@ -1,8 +1,9 @@
 import { connect } from 'react-redux';
+import { RootState } from '../../../redux/store'; 
 import Filter from './Filter';
-import { applyFilter } from '../../../app/redux/actions';
+import { applyFilter } from '../../../redux/actions';
 
-const mapStateToProps = (state: any) => {
+const mapStateToProps = (state: RootState) => {
     return {
         categories: state.app.categories,
         isFilterShown: state.app.isFilterShown,

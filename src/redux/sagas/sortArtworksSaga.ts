@@ -1,8 +1,10 @@
 import { put, takeLatest, select } from 'redux-saga/effects';
-import { Artwork } from '../../../interfaces';
+import { PayloadAction } from '@reduxjs/toolkit';
+import { Artwork } from '../../interfaces';
 import { SET_CURRENT_ARTWORKS, CHANGE_SORT } from '../actions';
+import { RootState } from '../store'; 
 
-export const getState = (state: any) => state.app;
+export const getState = (state: RootState) => state.app;
 
 const sortByPrice = (allArtworks: Artwork[], isAscending: boolean) => {
     return [
@@ -23,7 +25,7 @@ const sortByAlphabet = (allArtworks: Artwork[], isAscending: boolean) => {
     ]
 }
 
-function* SortArtworks(action: any): any {
+function* SortArtworks(action: PayloadAction<{value: string; isAscending: boolean}>): any {
     try {
         const { value, isAscending } = action.payload;
         const state = yield select(getState);
@@ -34,11 +36,9 @@ function* SortArtworks(action: any): any {
             artworks = sortByAlphabet(state.currentArtworks, isAscending);
         }
 
-        // console.log(artworks);
         yield put({ type: SET_CURRENT_ARTWORKS, payload: artworks });
     } catch (e) {
         console.log('error', e)
-        //   yield put({type: "USER_FETCH_FAILED", message: e.message});
     }
 }
 

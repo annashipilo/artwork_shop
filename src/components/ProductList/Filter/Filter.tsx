@@ -1,22 +1,23 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, ChangeEvent } from 'react';
 import Checkbox from '@material-ui/core/Checkbox';
 import FormGroup from '@material-ui/core/FormGroup';
 import FormControl from '@material-ui/core/FormControl';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import PriceFilter from '../PriceFilter/PriceFilter';
+import { Filters as FiltersInterface} from '../../../interfaces';
 import './style.scss';
 
 interface FilterProps {
     categories: string[];
-    applyFilter(filter: any): void;
+    applyFilter(filter: object): void;
     isFilterShown: boolean;
-    appliedFilters: any
+    appliedFilters: FiltersInterface
 }
 
 const Filter = ({ categories, applyFilter, isFilterShown, appliedFilters }: FilterProps) => {
     const [options, setOptions] = useState<string[]>([...appliedFilters.category]);
 
-    const handleChange = (e: any) => {
+    const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
         const option = e.target;
         const updatedOptions = [...options] as string[]
         if (option.checked) {

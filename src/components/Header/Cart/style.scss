@@ -4,10 +4,10 @@
     position: relative;
 
     &__label{
-        color: #ffffff;
+        color: $white;
         font-weight: 700;
         font-size: 20px;
-        background-color: #000000;
+        background-color: $black;
         position: absolute;
         right: 0;
         bottom: 0;

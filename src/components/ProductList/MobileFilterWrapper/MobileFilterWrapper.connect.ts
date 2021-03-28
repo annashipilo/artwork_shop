@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import MobileFilterWrapper from './MobileFilterWrapper';
-import { clearFilter, showFilter } from '../../../app/redux/actions';
+import { clearFilter, showFilter } from '../../../redux/actions';
 
 const mapDispatchToProps = {
     clearFilter,

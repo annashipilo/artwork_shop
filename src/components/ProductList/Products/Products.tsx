@@ -16,8 +16,8 @@ const Products = ({ artworks }: ProductsProps) => {
 
     const handleChange = (pageIndex = 1) => {
         setPage(pageIndex);
-        const a = artworks.slice(PAGE_SIZE * (pageIndex - 1), PAGE_SIZE * (pageIndex))
-        setCurrentArtworks(a);
+        const products = artworks.slice(PAGE_SIZE * (pageIndex - 1), PAGE_SIZE * (pageIndex))
+        setCurrentArtworks(products);
     }
 
     useEffect(() => {

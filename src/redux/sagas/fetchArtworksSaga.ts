@@ -1,5 +1,5 @@
 import { call, put, takeLatest } from 'redux-saga/effects';
-import { Artwork } from '../../../interfaces';
+import { Artwork } from '../../interfaces';
 import { INIT_ARTWORKS, SET_ALL_ARTWORKS, SET_CURRENT_ARTWORKS, SET_FEATURED_ARTWORK, DEFINE_CATEGORIES } from '../actions';
 
 function* fetchArtworks(): any {
@@ -7,8 +7,8 @@ function* fetchArtworks(): any {
         const response = yield call(fetch, '/data.json');
         const artworks = yield response.json();
 
-        const featuredArtwork = artworks.products.find((item: any) => item.featured);
-        const currentArtworks = artworks.products.filter((item: any) => !item.featured);
+        const featuredArtwork = artworks.products.find((item: Artwork) => item.featured);
+        const currentArtworks = artworks.products.filter((item: Artwork) => !item.featured);
         const categories = defineCategories(artworks.products);
 
         yield put({ type: SET_ALL_ARTWORKS, payload: artworks.products });
@@ -17,7 +17,6 @@ function* fetchArtworks(): any {
         yield put({ type: DEFINE_CATEGORIES, payload: categories })
     } catch (e) {
         console.log('error', e)
-        //   yield put({type: "USER_FETCH_FAILED", message: e.message});
     }
 }
 

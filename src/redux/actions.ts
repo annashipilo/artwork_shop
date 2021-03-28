@@ -1,4 +1,5 @@
-import { Artwork, Sorting } from '../../interfaces';
+import { Artwork, Sorting, Filters } from '../interfaces';
+import { AppDispatch, RootState } from './store';
 
 export const SET_ALL_ARTWORKS = 'artworks/setAll';
 export const SET_CURRENT_ARTWORKS = 'artworks/setCurrent';
@@ -41,7 +42,7 @@ export function setFeaturedArtwork(artwork: Artwork) {
 }
 
 export function addToCart(id: number) {
-  return (dispatch: any, getState: any) => {
+  return (dispatch: AppDispatch, getState: (() => RootState)) => {
     const artworks = getState().app.allArtworks;
     const addedItem = artworks.find((item: Artwork) => item.id === id);
     dispatch({
@@ -75,7 +76,7 @@ export function changeSort(payload: Sorting) {
   }
 }
 
-export function applyFilter(payload: any) {
+export function applyFilter(payload: Filters) {
   return {
     type: APPLY_FILTER,
     payload
@@ -90,7 +91,7 @@ export function showFilter(state: boolean) {
 }
 
 export function clearFilter() {
-  return (dispatch: any) => {
+  return (dispatch: AppDispatch) => {
     dispatch({
       type: APPLY_FILTER,
       payload: {
@@ -98,10 +99,10 @@ export function clearFilter() {
         price: []
       }
     })
-    dispatch ({
+    dispatch({
       type: CLEAR_FILTER
     })
-    dispatch ({
+    dispatch({
       type: SHOW_FILTER,
       payload: false
     })

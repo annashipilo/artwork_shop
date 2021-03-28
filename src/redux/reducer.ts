@@ -1,3 +1,5 @@
+import { AnyAction } from 'redux'
+
 import {
   SET_ALL_ARTWORKS,
   SET_CURRENT_ARTWORKS,
@@ -11,13 +13,7 @@ import {
   SHOW_FILTER,
   CLEAR_FILTER,
 } from './actions';
-import { Artwork } from '../../interfaces';
-
-// interface State {
-//   artworks: Artwork[];
-//   featuredArtwork: Artwork | null;
-//   cart: Artwork[];
-// }
+import { Artwork } from '../interfaces';
 
 const initialState = {
   allArtworks: [],
@@ -32,12 +28,12 @@ const initialState = {
   categories: [],
   appliedFilters: {
     category: [],
-    price: []
+    price: {}
   },
   isFilterShown: false,
 }
 
-export default function counterReducer(state = initialState, action: any) {
+export default function appReducer(state = initialState, action: AnyAction) {
   switch (action.type) {
     case SET_ALL_ARTWORKS:
       return { ...state, allArtworks: action.payload }
@@ -61,7 +57,6 @@ export default function counterReducer(state = initialState, action: any) {
       const filters = { ...state.appliedFilters, ...action.payload }
       return { ...state, appliedFilters: filters }
     case CLEAR_FILTER:
-      // console.log(initialState.appliedFilters);
       return { ...state, appliedFilters: initialState.appliedFilters }
     case SHOW_FILTER:
       return { ...state, isFilterShown: action.payload }

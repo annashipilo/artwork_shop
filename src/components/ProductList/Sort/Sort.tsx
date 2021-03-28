@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, ChangeEvent } from 'react';
 import { Sorting } from '../../../interfaces';
 import './style.scss';
 
 interface SortProps {
     sort: Sorting
-    changeSort(sort: any): void;
+    changeSort(sort: Sorting): void;
 }
 
 const Sort = ({ sort, changeSort }: SortProps) => {
@@ -15,7 +15,7 @@ const Sort = ({ sort, changeSort }: SortProps) => {
         changeSort(newSort);
     }
 
-    const handleSelectChange = (e: any) => {
+    const handleSelectChange = (e: ChangeEvent<HTMLSelectElement>) => {
         setOption(e.target.value);
         const newSort = { ...sort, value: e.target.value };
         changeSort(newSort);

@@ -1,12 +1,6 @@
 import { connect } from 'react-redux';
 import ToggleFilter from './ToggleFilter';
-import { showFilter } from '../../../app/redux/actions';
-
-// const mapStateToProps = (state: any) => {
-//     return {
-//         categories: state.app.categories,
-//     }
-// }
+import { showFilter } from '../../../redux/actions';
 
 const mapDispatchToProps = {
     showFilter,

@@ -29,3 +29,18 @@ export interface Sorting{
     isAscending: boolean,
     value: string
 }
+
+export interface PriceOptionValue{
+    min: number;
+    max: number;
+}
+
+export interface PriceOption{
+    name: string;
+    value: PriceOptionValue;
+}
+
+export interface Filters {
+    category: string[];
+    price: PriceOptionValue;
+}

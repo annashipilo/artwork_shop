@@ -1,8 +1,9 @@
 import { connect } from 'react-redux';
+import { RootState } from '../../../redux/store'; 
 import Sort from './Sort';
-import { changeSort } from '../../../app/redux/actions';
+import { changeSort } from '../../../redux/actions';
 
-const mapStateToProps = (state: any) => {
+const mapStateToProps = (state: RootState) => {
     return {
         sort: state.app.sort,
     }

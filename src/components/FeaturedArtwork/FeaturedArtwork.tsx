@@ -13,6 +13,7 @@ const FeaturedArtwork = ({ initArtworks, artwork }: FeaturedArtworkProps) => {
     useEffect(() => {
         initArtworks();
     }, []);
+
     return (
         <div className="featured-artwork">
             {artwork && <>

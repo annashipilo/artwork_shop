@@ -1,7 +1,9 @@
 import { put, takeLatest, select } from 'redux-saga/effects';
 import { SET_CURRENT_ARTWORKS, APPLY_FILTER } from '../actions';
+import { Artwork, Filters as FiltersInterface } from '../../interfaces';
+import { RootState } from '../store'; 
 
-const getState = (state: any) => state.app;
+const getState = (state: RootState) => state.app;
 
 function* FilterArtworks(): any {
     try {
@@ -9,7 +11,8 @@ function* FilterArtworks(): any {
         const appliedFilters = state.appliedFilters;
         const { category, price } = appliedFilters;
         const artworks = state.allArtworks;
-        let currentArtworks = [...artworks.filter((art: any) => !art.featured)];
+
+        let currentArtworks = [...artworks.filter((art: Artwork) => !art.featured)];
         if (!category.length && !Object.keys(price).length) {
             yield put({ type: SET_CURRENT_ARTWORKS, payload: artworks });
         }
@@ -21,7 +24,7 @@ function* FilterArtworks(): any {
         }
         if (Object.keys(price).length) {
 
-            const updatedArr = currentArtworks.filter((item: any) => {
+            const updatedArr = currentArtworks.filter((item: FiltersInterface) => {
                 if (item.price < price.max && item.price > price.min) {
                     return item;
                 }
