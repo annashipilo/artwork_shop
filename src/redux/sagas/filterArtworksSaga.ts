@@ -14,7 +14,7 @@ function* FilterArtworks(): any {
 
         let currentArtworks = [...artworks.filter((art: Artwork) => !art.featured)];
         if (!category.length && !Object.keys(price).length) {
-            yield put({ type: SET_CURRENT_ARTWORKS, payload: artworks });
+            yield put({ type: SET_CURRENT_ARTWORKS, payload: currentArtworks });
         }
         if (category.length) {
             currentArtworks = currentArtworks.filter(item => {
