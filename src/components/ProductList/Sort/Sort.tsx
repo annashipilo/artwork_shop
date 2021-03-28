@@ -17,7 +17,7 @@ const Sort = ({ sort, changeSort }: SortProps) => {
 
     const handleSelectChange = (e: ChangeEvent<HTMLSelectElement>) => {
         setOption(e.target.value);
-        const newSort = { ...sort, value: e.target.value };
+        const newSort = { ...sort, value: e.target.value.toLowerCase() };
         changeSort(newSort);
     }
 
