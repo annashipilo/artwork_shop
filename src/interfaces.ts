@@ -1,3 +1,9 @@
+declare global {
+    interface Window {
+        faunadb: any;
+    }
+}
+
 export interface ArtworkImage {
     src: string;
     alt: string;
